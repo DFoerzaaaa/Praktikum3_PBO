@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class gaji {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Konstanta
+        final int GAJI_POKOK = 500000;
+        final double HARGA_PER_ITEM = 50000;
+        final double BONUS_10_PERSEN_PER_ITEM = 0.10;
+        final double BONUS_25_PERSEN = 0.25;
+        final double BONUS_35_PERSEN = 0.35;
+        final double DENDA_15_PERSEN = 0.15;
+        final int TARGET_MINIMAL = 40;
+        final int TARGET_MAXIMAL = 80;
+
+        // Input jumlah penjualan
+        System.out.print("Masukkan jumlah penjualan bulan ini: ");
+        int jumlahPenjualan = scanner.nextInt();
+
+        // Menghitung total penjualan
+        double totalPenjualan = jumlahPenjualan * HARGA_PER_ITEM;
+
+        // Menghitung bonus dan potongan
+        double bonus = 0;
+        if (jumlahPenjualan >= TARGET_MAXIMAL) {
+            bonus = totalPenjualan * BONUS_35_PERSEN;
+        } else if (jumlahPenjualan >= TARGET_MINIMAL) {
+            bonus = totalPenjualan * BONUS_25_PERSEN;
+        } else if (jumlahPenjualan < 15) {
+            double denda = (15 - jumlahPenjualan) * HARGA_PER_ITEM * DENDA_15_PERSEN;
+            double gaji = GAJI_POKOK - denda;
+            System.out.println("Gaji yang diterima: " + gaji);
+            return;
+        }
+
+        // Menghitung gaji akhir
+        double gajiAkhir = GAJI_POKOK + bonus + (jumlahPenjualan * HARGA_PER_ITEM * BONUS_10_PERSEN_PER_ITEM);
+        System.out.println("Gaji yang diterima: " + gajiAkhir);
+    }
+}
