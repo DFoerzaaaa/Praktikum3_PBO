@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class berhitung{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Membaca input dari pengguna
+        System.out.println("Masukkan operasi ( contoh : 2 * 4 ) :");
+        String input = scanner.nextLine();
+
+        // Memecah input menjadi A, operator, dan B
+        String[] tokens = input.split(" ");
+        int A = Integer.parseInt(tokens[0]);
+        String operator = tokens[1];
+        int B = Integer.parseInt(tokens[2]);
+
+        // Menghitung hasil berdasarkan operator
+        int result = 0;
+        switch (operator) {
+            case "+":
+                result = A + B;
+                break;
+            case "-":
+                result = A - B;
+                break;
+            case "*":
+                result = A * B;
+                break;
+            case "/":
+                if (B != 0) {
+                    result = A / B;
+                } else {
+                    System.out.println("Error: Pembagian dengan nol!");
+                    return;
+                }
+                break;
+            case "%":
+                if (B != 0) {
+                    result = A % B;
+                } else {
+                    System.out.println("Error: Pembagian dengan nol!");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Operator tidak valid!");
+                return;
+        }
+
+        // Menampilkan hasil
+        System.out.println("Hasil: " + result);
+    }
+}
