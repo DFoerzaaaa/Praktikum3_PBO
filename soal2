@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class soal2 {
+// Mendefinisikan kelas utama bernama 'soal2'.
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        // Membuat objek Scanner untuk mengambil input dari pengguna.
+
+        System.out.println("================================");
+        // Mencetak garis pembatas "================================" sebelum output utama.
+
+        for (int i = 0; i < 3; i++) {
+            // Perulangan sebanyak 3 kali untuk membaca dan mencetak input.
+
+            String s1 = sc.next();
+            // Membaca input pertama sebagai string.
+
+            int x = sc.nextInt();
+            // Membaca input kedua sebagai bilangan integer.
+
+            System.out.printf("%-15s%03d%n", s1, x);
+            // Menggunakan printf untuk mencetak output dengan format yang diinginkan.
+            // %-15s: mencetak string dengan lebar 15 karakter, rata kiri.
+            // %03d: mencetak angka dengan 3 digit, menambahkan nol di depan jika kurang dari 3 digit.
+            // %n: pindah ke baris baru.
+        }
+
+        System.out.println("================================");
+        // Mencetak garis pembatas setelah output utama.
+    }
+}
