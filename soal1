@@ -1,0 +1,40 @@
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+public class soal1 {
+
+    public static void main(String[] args) {
+        // Fungsi utama program yang akan dijalankan ketika program dimulai.
+
+        Scanner sc = new Scanner(System.in);
+        // Membuat objek Scanner untuk membaca input dari pengguna.
+
+        if (!sc.hasNext()) {
+            // Mengecek apakah ada input yang tersedia dari pengguna.
+            // Jika tidak ada input, cetak "0" dan akhiri program.
+            System.out.println(0);
+        } else {
+            String input = sc.nextLine();
+            // Jika ada input, baca seluruh baris input sebagai string.
+
+            String[] a = input.trim().split("[ !,?._'@]+");
+            // Memecah string input menjadi array berdasarkan pemisah tertentu
+            // seperti spasi, tanda seru, koma, tanda tanya, titik, dan simbol lainnya.
+
+            ArrayList<String> listOfStrings = new ArrayList<String>(Arrays.asList(a));
+            // Mengonversi array hasil split menjadi ArrayList agar lebih mudah dikelola.
+
+            System.out.println(listOfStrings.size());
+            // Mencetak jumlah kata (elemen dalam ArrayList) yang dihasilkan setelah pemisahan.
+
+            for (String str : listOfStrings) {
+                // Perulangan untuk setiap string dalam ArrayList.
+                System.out.println(str);
+                // Mencetak setiap kata pada baris baru.
+            }
+        }
+    }
+}
