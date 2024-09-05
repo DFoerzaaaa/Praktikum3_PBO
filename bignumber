@@ -1,0 +1,28 @@
+import java.util.*;
+import java.math.*;
+
+public class bignumber {
+// Mendefinisikan kelas utama bernama 'bignumber'.
+
+    public static void main(String[] args) {
+        // Fungsi utama program yang akan dijalankan ketika program dimulai.
+
+        Scanner sc = new Scanner(System.in);
+        // Membuat objek Scanner untuk membaca input dari pengguna.
+
+        String numOne = sc.nextLine();
+        String numTwo = sc.nextLine();
+        // Membaca dua input string dari pengguna yang merepresentasikan bilangan besar.
+
+        BigInteger bigNumOne = new BigInteger(numOne);
+        BigInteger bigNumTwo = new BigInteger(numTwo);
+        // Mengonversi string input menjadi objek BigInteger,
+        // yang digunakan untuk menangani bilangan bulat sangat besar.
+
+        System.out.println(bigNumOne.add(bigNumTwo));
+        // Menghitung dan mencetak hasil penjumlahan dua BigInteger.
+
+        System.out.println(bigNumOne.multiply(bigNumTwo));
+        // Menghitung dan mencetak hasil perkalian dua BigInteger.
+    }
+}
